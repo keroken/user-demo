@@ -1,32 +1,8 @@
-import axios from 'axios';
-import { useState } from 'react';
 import { useFetchUsers } from './hooks/useFetchUsers';
 
 const App = () => {
-  const { userList, handleFetchUsers } = useFetchUsers();
+  const { isLoading, isError, userList, handleFetchUsers } = useFetchUsers();
   console.log(userList);
-  // const [userList, setUserList] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-
-  // const handleFetchUser = () => {
-  //   setIsLoading(true);
-  //   setIsError(false);
-
-  //   axios
-  //     .get('https://jsonplaceholder.typicode.com/users')
-  //     .then(result => {
-  //       const users = result.data.map(user => ({
-  //         id: user.id,
-  //         name: user.name,
-  //         email: user.email,
-  //         city: user.city,
-  //       }));
-  //       setUserList(users);
-  //     })
-  //     .catch(() => setIsError(true))
-  //     .finally(() => setIsLoading(false));
-  // };
 
   return (
     <div>
